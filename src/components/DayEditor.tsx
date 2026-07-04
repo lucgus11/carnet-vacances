@@ -24,6 +24,7 @@ const AUTOSAVE_DELAY_MS = 500;
 export default function DayEditor({ journee, onSaved }: DayEditorProps): JSX.Element {
   const [lieu, setLieu] = useState(journee.lieu);
   const [humeur, setHumeur] = useState<Mood | null>(journee.humeur);
+  const [activites, setActivites] = useState(journee.activites ?? '');
   const [repasMatin, setRepasMatin] = useState(journee.repasMatin);
   const [repasMidi, setRepasMidi] = useState(journee.repasMidi);
   const [repasSoir, setRepasSoir] = useState(journee.repasSoir);
@@ -87,6 +88,22 @@ export default function DayEditor({ journee, onSaved }: DayEditorProps): JSX.Ele
       <div className="field-group">
         <span className="field-label">Humeur du jour</span>
         <MoodPicker value={humeur} onChange={handleMoodChange} />
+      </div>
+
+      <div className="field-group">
+        <label className="field-label" htmlFor={`activites-${journee.id}`}>
+          Activités
+        </label>
+        <textarea
+          id={`activites-${journee.id}`}
+          className="meal-textarea activites-textarea"
+          placeholder="Qu'as-tu fait aujourd'hui ? (visites, balades, plage, jeux…)"
+          value={activites}
+          onChange={(e) => {
+            setActivites(e.target.value);
+            scheduleSave({ activites: e.target.value });
+          }}
+        />
       </div>
 
       <div className="field-group">

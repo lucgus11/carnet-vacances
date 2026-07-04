@@ -60,6 +60,7 @@ export default function TripForm({ onCreated, onCancel }: TripFormProps): JSX.El
         date,
         lieu: '',
         humeur: null,
+        activites: '',
         repasMatin: '',
         repasMidi: '',
         repasSoir: ''
