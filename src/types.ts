@@ -29,6 +29,8 @@ export interface Journee {
   date: string;
   lieu: string;
   humeur: Mood | null;
+  /** Activités faites pendant la journée (texte libre). */
+  activites: string;
   repasMatin: string;
   repasMidi: string;
   repasSoir: string;
