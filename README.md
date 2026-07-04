@@ -10,7 +10,8 @@ l'utilisateur (IndexedDB via Dexie.js).
   Le nombre de jours et la structure des journées sont générés automatiquement.
 - **Cahier journalier** : navigue entre les jours (onglets + flèches précédent/suivant),
   chaque jour a sa date affichée automatiquement, un champ "Lieu", 3 smileys d'humeur
-  (content / neutre / triste, choix unique) et 3 zones de texte pour les repas
+  (content / neutre / triste, choix unique), une zone de texte libre pour les
+  **activités faites** dans la journée, et 3 zones de texte pour les repas
   (Matin / Midi / Soir).
 - **Sauvegarde automatique en temps réel** à chaque frappe (debounce ~500ms), rien à cliquer.
 - **100% hors-ligne** : Service Worker (Workbox via `vite-plugin-pwa`) qui pré-cache toute
