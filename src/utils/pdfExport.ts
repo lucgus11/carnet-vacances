@@ -140,6 +140,10 @@ function drawDayPage(doc: jsPDF, journee: Journee, pageWidth: number, margin: nu
   }
 
   y += 10;
+  if (journee.activites?.trim()) {
+    y = drawMealBlock(doc, 'Activités', journee.activites, margin, y, pageWidth);
+    y += 4;
+  }
   y = drawMealBlock(doc, 'Matin', journee.repasMatin, margin, y, pageWidth);
   y = drawMealBlock(doc, 'Midi', journee.repasMidi, margin, y, pageWidth);
   drawMealBlock(doc, 'Soir', journee.repasSoir, margin, y, pageWidth);
